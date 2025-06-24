@@ -1,29 +1,15 @@
 ---
 include:
+#  - board: eyelash_corne_left
+#    shield: nice_view
+#    #snippet: zmk-usb-logging    # Uncomment to log over USB.
   - board: eyelash_corne_right
-
+    #snippet: zmk-usb-logging
   - board: eyelash_corne_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
     artifact-name: eyelash_corne_studio_left
-
   - board: eyelash_corne_left
     shield: settings_reset
-
-west.yml manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-
-  projects:
-    - name: eyelash_corne
-      url: https://github.com/a741725193/zmk-new_corne
-      revision: main
-
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
-
-  self:
-    path: config
+    #snippet: zmk-usb-logging
+ 
